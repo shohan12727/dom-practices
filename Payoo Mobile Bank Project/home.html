@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="max-w-[450px] h-screen  mx-auto ">
+    <nav class="flex justify-between items-center p-3 border-b-1 border-gray-400">
+        <div class="flex items-center">
+            <img src="./assets/Group.png" alt="">
+            <div>
+                <h1 class="font-bold">$ <span>45000</span></h1>
+                <p class="text-[#0808085b]">Available Balance</p>
+            </div>
+        </div>
+        <button class="btn btn-outline !text-[#0808085b]"><i
+                class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>Log Out</button>
+    </nav>
+
+    <div class="p-3 mt-4 mb-4">
+        <h1 class="font-bold text-2xl mb-2">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#08080882]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+
+        <section class="grid grid-cols-3 my-4 gap-3">
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/wallet1.png" alt="">
+                </div>
+                <p>Add Money</p>
+            </div>
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/send1.png" alt="">
+                </div>
+                <p>Cashout</p>
+            </div>
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/money1.png" alt="">
+                </div>
+                <p class="text-center">Transfer Money</p>
+            </div>
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/bonus1.png" alt="">
+                </div>
+                <p>Get Bonus</p>
+            </div>
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/purse1.png" alt="">
+                </div>
+                <p>Pay Bill</p>
+            </div>
+            <div class="card flex justify-center items-center p-4 border border-gray-300">
+                <div>
+                    <img src="./assets/transaction1.png" alt="">
+                </div>
+                <p>Transactions</p>
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- add money form  -->
+
+    <div class="bg-[#F4F5F7]">
+        <section class="p-3">
+            <h1>Add Money</h1>
+            <div class="bg-white rounded p-3 mt-2 ">
+                <label for="">Select A Bank</label>
+                <input type="text" class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" placeholder="select bank"
+                    list="browsers" />
+                <datalist id="browsers">
+                    <option value="Brac"></option>
+                    <option value="IFIC"></option>
+                    <option value="Sonali"></option>
+                    <option value="Rupali"></option>
+                </datalist>
+                <label for="">Bank Account Number</label>
+                <input class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Enter 11 digit account number" name="" id="">
+                <label for="">Pin Number</label>
+                <input class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Enter 4 digit pin number" name="" id="">
+                <button id="" class="btn mt-4 !rounded-3xl !text-white w-full !bg-[#0874F2]">Add Money</button>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>
