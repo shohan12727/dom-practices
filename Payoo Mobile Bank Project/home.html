@@ -79,7 +79,7 @@
 
     <div id="add_money_parent" class="bg-[#F4F5F7]">
         <section class="p-3">
-            <h1>Add Money</h1>
+            <h1 class="font-bold">Add Money</h1>
             <div class="bg-white rounded p-3 mt-2 ">
                 <label for="">Select A Bank</label>
                 <input type="text" class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" placeholder="select bank"
@@ -106,9 +106,24 @@
 
 
 
-    <!-- cash out form  -->
-    <div style="display: none;" id="cahsout_parent">
-        Cash Out
+    <!-- cash out section  -->
+    <div style="display: none;" id="cahsout_parent" class="bg-[#F4F5F7]">
+        <section class="p-3">
+            <h1 class="font-bold">Cash Out</h1>
+            <div class="bg-white rounded p-3 mt-2 ">
+                <label for="">Agent Number</label>
+                <input id="cashout_agent_number" class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Enter 11 digit number" name="">
+                <label for="">Amount</label>
+                <input id="cahsout_ammount" class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Enter amount to withdraw" name="">
+                <label for="">Pin Number</label>
+                <input id="cashsout_pin" class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Enter 4 digit pin number" name="">
+                <button id="withdraw_button" class="btn mt-4 !rounded-3xl !text-white w-full !bg-[#0874F2]">Withdraw
+                    Money</button>
+            </div>
+        </section>
     </div>
 
     <script src="./home.js"></script>
