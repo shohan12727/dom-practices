@@ -19,7 +19,7 @@
         <div class="flex items-center">
             <img src="./assets/Group.png" alt="">
             <div>
-                <h1 class="font-bold">$ <span>45000</span></h1>
+                <h1 class="font-bold">$ <span id="available_balance">45000</span></h1>
                 <p class="text-[#0808085b]">Available Balance</p>
             </div>
         </div>
@@ -93,15 +93,18 @@
                 <label for="">Bank Account Number</label>
                 <input class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
                     placeholder="Enter 11 digit account number" name="" id="">
+                <label for="">Amount to Add</label>
+                <input class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
+                    placeholder="Add Amount to withdraw" name="" id="ammount_add">
                 <label for="">Pin Number</label>
                 <input class="input my-3 !bg-[#F4F5F7] !rounded-2xl !w-full" type="text"
                     placeholder="Enter 4 digit pin number" name="" id="">
-                <button id="" class="btn mt-4 !rounded-3xl !text-white w-full !bg-[#0874F2]">Add Money</button>
+                <button id="add_money" class="btn mt-4 !rounded-3xl !text-white w-full !bg-[#0874F2]">Add Money</button>
             </div>
         </section>
     </div>
 
-
+<script src="./home.js"></script>
 </body>
 
 </html>
