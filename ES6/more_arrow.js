@@ -24,7 +24,7 @@ const loIt = () => console.log('Shohan');
 loIt()
 
 
-// annonymous fuction 
+// annonymous fuction
 
 // document.getElementById('').addEventListener('click', () => {
 
