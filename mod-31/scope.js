@@ -26,7 +26,7 @@ function doMath(a, b) {
     const total = sum + 10;
     return total
 }
-
+    
 
 
 // function er baire holo global scope
