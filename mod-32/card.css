@@ -1,0 +1,29 @@
+#card_container {
+  max-width: 1180px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+   align-items: stretch;
+}
+.card {
+  min-height: 180px;
+}
+
+
+.card {
+  box-shadow: 1px 1px 1px 1px #ddd;
+  padding: 10px;
+  /* background-color: papayawhip; */
+}
+.card h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card p {
+  text-align: justify;
+  color: rgba(0, 0, 0, 0.441);
+}
