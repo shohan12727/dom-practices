@@ -2,7 +2,9 @@
 // .then(res => res.json())
 // .then(data => console.log(data))
 // }
+
 // loadData ();
+
 // console.log('Shohan');
 // console.log(false);
 
@@ -11,13 +13,14 @@
 // now i want syncronus
 
 const load = async () => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-  console.log("King shohan");
+  const response = await fetch("https://jsonplaceholder.ty");
   const result = await response.json();
   console.log(true);
-  console.log('ami bangla bolchi');
   
   console.log(result);
 };
 
 load();
+
+  console.log('ami bangla bolchi');
+  console.log("King shohan");
