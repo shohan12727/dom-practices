@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDO</title>
+    <style>
+    #todo_container{
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card{
+        border:  1px solid papayawhip;
+        padding: 10px;
+        box-shadow: 1px 1px 1px 1px #ddd;
+        /* background-color: papayawhip; */
+    }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <button onclick="leadTodo()">Load Todo</button>
+    <div id="todo_container">
+      
+    </div>
+    <script src="./todo.js"></script>
+  </body>
+</html>
+
+<!-- { "userId": 5, "id": 84, "title": "sunt veritatis ut voluptate", "completed":
+false } -->
