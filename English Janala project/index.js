@@ -14,18 +14,50 @@ const loadLevelWord = async (id) => {
   const json = await url.json();
   displayLavelWord(json.data);
 };
-const displayLavelWord = (words) => {
-    const wordContainer = document.getElementById('word_container'); 
-    wordContainer.innerHTML = "";
-    words.forEach(word => {
-        console.log(word);
-        const card = document.createElement('div');
-        card.innerHTML = `
-           <p> Cat </p>
-        `;
-        wordContainer.appendChild(card);
 
-    })
+// {
+//     "id": 4,
+//     "level": 5,
+//     "word": "Diligent",
+//     "meaning": "পরিশ্রমী",
+//     "pronunciation": "ডিলিজেন্ট"
+// }
+const displayLavelWord = (words) => {
+  const wordContainer = document.getElementById("word_container");
+  wordContainer.innerHTML = "";
+  if (words.length == 0) {
+    wordContainer.innerHTML = `
+       <div class="text-center  col-span-full space-y-6 py-10 font-bangla">
+       <img class="mx-auto" src="./assets/alert-error.png"/>
+      <p class="text-xl font-medium text-gray-400">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+      <h2 class="font-bold text-4xl">নেক্সট Lesson এ যান</h2>
+    </div>
+    `;
+    return;
+  }   
+  words.forEach((word) => {
+    console.log(word);
+    const card = document.createElement("div");
+    card.innerHTML = `
+            <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
+       <h2 class="font-bold text-2xl">${
+         word.word ? word.word : "Word can't found"
+       }</h2>
+       <p class="font-semibold">${
+         word.meaning ? word.meaning : "Meaning can't found"
+       }</p>
+       <div class="text-2xl font-semibold font-bangla">${
+         word.pronunciation ? word.pronunciation : "Pronunciation can't found"
+       }</div>
+       <div class="flex justify-between">
+<button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+<button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>
+       </div>
+
+     </div>
+        `;
+    wordContainer.appendChild(card);
+  });
 };
 const displayLessons = (levels) => {
   // 1. get the container and make it empty
