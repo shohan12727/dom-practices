@@ -12,16 +12,20 @@ const loadLevelWord = async (id) => {
     `https://openapi.programming-hero.com/api/level/${id}`
   );
   const json = await url.json();
+  reoveActivce(); // remove all active class
+  const clickBtn = document.getElementById(`lesson-btn-${id}`);
+  // console.log(clickBtn);
+  clickBtn.classList.add("active");
+
   displayLavelWord(json.data);
 };
 
-// {
-//     "id": 4,
-//     "level": 5,
-//     "word": "Diligent",
-//     "meaning": "পরিশ্রমী",
-//     "pronunciation": "ডিলিজেন্ট"
-// }
+const reoveActivce = () => {
+  const lessonButtons = document.querySelectorAll(".lesson-btn");
+  // console.log(lessonButtons);
+  lessonButtons.forEach((btn) => btn.classList.remove("active"));
+};
+
 const displayLavelWord = (words) => {
   const wordContainer = document.getElementById("word_container");
   wordContainer.innerHTML = "";
@@ -34,9 +38,9 @@ const displayLavelWord = (words) => {
     </div>
     `;
     return;
-  }   
+  }
   words.forEach((word) => {
-    console.log(word);
+    // console.log(word);
     const card = document.createElement("div");
     card.innerHTML = `
             <div class="bg-white rounded-xl shadow-sm text-center py-10 px-5 space-y-4">
@@ -50,8 +54,8 @@ const displayLavelWord = (words) => {
          word.pronunciation ? word.pronunciation : "Pronunciation can't found"
        }</div>
        <div class="flex justify-between">
-<button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
-<button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>
+<button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+<button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>
        </div>
 
      </div>
@@ -72,7 +76,7 @@ const displayLessons = (levels) => {
     // console.log(level);
     const btnDiv = document.createElement("div");
     btnDiv.innerHTML = `
-        <button onclick="loadLevelWord(${level.level_no})" class="btn btn-outline btn-primary">
+        <button id="lesson-btn-${level.level_no}" onclick="loadLevelWord(${level.level_no})" class="lesson-btn btn btn-outline btn-primary">
         <i class="fa-solid fa-book-open"></i>Lesson - ${level.level_no}
         </button>
     `;
