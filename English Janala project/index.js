@@ -25,6 +25,42 @@ const reoveActivce = () => {
   // console.log(lessonButtons);
   lessonButtons.forEach((btn) => btn.classList.remove("active"));
 };
+const loadWordDetail = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/word/${id}`;
+  //  console.log(url);
+  const response = await fetch(url);
+  const details = await response.json();
+  displayWordDetails(details.data);
+};
+const createElemetns = (arr) => {
+    const htmlElemetns = arr.map(el => 
+        `<span class="btn">${el}</span> `)
+        return(htmlElemetns.join(" "));  
+    
+}
+const displayWordDetails = (word) => {
+  console.log(word);
+  const detailsContainer = document.getElementById("details_container");
+  detailsContainer.innerHTML = `
+  <div class="">
+  <h2 class="text-2xl font-bold">${word.word}(<i class="fa-solid fa-microphone-lines"></i> :${word.pronunciation})</h2>
+</div>
+<div class="">
+  <h2 class="font-bold">${word.meaning}</h2>
+  <p></p>
+</div>
+<div class="">
+  <h2 class="font-bold">Example</h2>
+  <p>${word.sentence}</p>
+</div>
+<div class="">
+  <h2 class="font-bold">Synonym</h2>
+   <div class= "">${createElemetns(word.synonyms)}</div>
+</div>
+  `;
+  // word_modal
+  document.getElementById("word_modal").showModal();
+};
 
 const displayLavelWord = (words) => {
   const wordContainer = document.getElementById("word_container");
@@ -54,7 +90,9 @@ const displayLavelWord = (words) => {
          word.pronunciation ? word.pronunciation : "Pronunciation can't found"
        }</div>
        <div class="flex justify-between">
-<button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
+<button onclick="loadWordDetail(${
+      word.id
+    })" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-circle-info"></i></button>
 <button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]"><i class="fa-solid fa-volume-high"></i></button>
        </div>
 
