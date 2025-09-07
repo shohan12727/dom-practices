@@ -8,6 +8,7 @@ const loadLessons = () => {
 
 const loadLevelWord = async (id) => {
   //   console.log(id);
+  manageSpinnner(true);
   const url = await fetch(
     `https://openapi.programming-hero.com/api/level/${id}`
   );
@@ -33,17 +34,28 @@ const loadWordDetail = async (id) => {
   displayWordDetails(details.data);
 };
 const createElemetns = (arr) => {
-    const htmlElemetns = arr.map(el => 
-        `<span class="btn">${el}</span> `)
-        return(htmlElemetns.join(" "));  
-    
-}
+  const htmlElemetns = arr.map((el) => `<span class="btn">${el}</span> `);
+  return htmlElemetns.join(" ");
+};
+
+const manageSpinnner = (status) => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("word_container").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("word_container").classList.remove("hidden");
+  }
+};
+
 const displayWordDetails = (word) => {
   console.log(word);
   const detailsContainer = document.getElementById("details_container");
   detailsContainer.innerHTML = `
   <div class="">
-  <h2 class="text-2xl font-bold">${word.word}(<i class="fa-solid fa-microphone-lines"></i> :${word.pronunciation})</h2>
+  <h2 class="text-2xl font-bold">${
+    word.word
+  }(<i class="fa-solid fa-microphone-lines"></i> :${word.pronunciation})</h2>
 </div>
 <div class="">
   <h2 class="font-bold">${word.meaning}</h2>
@@ -73,6 +85,7 @@ const displayLavelWord = (words) => {
       <h2 class="font-bold text-4xl">নেক্সট Lesson এ যান</h2>
     </div>
     `;
+    manageSpinnner(false);
     return;
   }
   words.forEach((word) => {
@@ -99,6 +112,7 @@ const displayLavelWord = (words) => {
      </div>
         `;
     wordContainer.appendChild(card);
+    manageSpinnner(false);
   });
 };
 const displayLessons = (levels) => {
